@@ -1,11 +1,17 @@
 #!/usr/bin/env sh
 
 FILENAME="lorem.ipsum"
+PARAGRAPHS=100
 BIN="MySed"
+
+if [ ! -f ${BIN} ]
+then
+	make
+fi
 
 if [ ! -f ${FILENAME} -o ! -r ${FILENAME} ]
 then
-	curl http://metaphorpsum.com/paragraphs/10 > ${FILENAME}
+	curl http://metaphorpsum.com/paragraphs/${PARAGRAPHS} > ${FILENAME}
 fi
 
 echo "common words are:"

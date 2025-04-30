@@ -1,8 +1,8 @@
 CXX				=	c++
 CXXFLAGS		=	-Wall -Wextra -Werror -g
-SRC				=	main.cpp
+SRC				=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ				=	$(SRC:.cpp=.o)
-NAME			=	MySed
+NAME			=	NeolithicWarfare
 
 .DEFAULT_GOAL	=	$(NAME)
 
@@ -22,8 +22,5 @@ re				:
 	$(MAKE) fclean
 	$(MAKE)
 
-test			:
-	echo "tests require manual input, run the script yourself"
 
-
-.PHONY			:	clean fclean re all test
+.PHONY			:	clean fclean re all
