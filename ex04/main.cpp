@@ -14,12 +14,12 @@ void	find_and_replace(std::string& string, std::string to_replace, std::string r
 
 void	sed(std::string file, std::string to_replace, std::string replacement) {
 	std::ifstream	infile(file);
+	if (!infile) throw std::invalid_argument("error opening " + file);
 	std::ofstream	outfile(file + ".replace");
+	if (!outfile) throw std::invalid_argument("error opening " + file + ".replace");
 	std::stringstream	content;
 	std::string		string;
 
-	if (!infile) throw std::invalid_argument("error opening " + file);
-	if (!outfile) throw std::invalid_argument("error opening " + file + ".replace");
 	content << infile.rdbuf();
 	string = content.str();
 	find_and_replace(string, to_replace, replacement);
