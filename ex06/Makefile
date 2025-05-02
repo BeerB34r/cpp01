@@ -2,7 +2,7 @@ CXX				=	c++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++17 -g
 SRC				=	main.cpp Harl.cpp
 OBJ				=	$(SRC:.cpp=.o)
-NAME			=	Harl
+NAME			=	harlFilter
 
 .DEFAULT_GOAL	=	$(NAME)
 

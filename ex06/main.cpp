@@ -19,6 +19,16 @@ void	test_harl() {
 	Harl::complain("info");
 	Harl::complain("warning");
 	Harl::complain("error");
+	Harl::complain("");
+	try { Harl::complain(NULL); } catch (std::exception &err) { std::cerr << err.what() << std::endl; }
+
+	Harl::replies("ERROR");
+	Harl::replies("WARNING");
+	Harl::replies("INFO");
+	Harl::replies("DEBUG");
+	Harl::replies("random text that wont trigger the other answers");
+	Harl::replies("");
+	try { Harl::replies(NULL); } catch (std::exception &err) { std::cerr << err.what() << std::endl; }
 }
 
 int	main(int ac, char **av) {
@@ -28,7 +38,7 @@ int	main(int ac, char **av) {
 			break ;
 		}
 		case 2: {
-			Harl::complain(av[1]);
+			Harl::replies(av[1]);
 			break ;
 		}
 		default: {

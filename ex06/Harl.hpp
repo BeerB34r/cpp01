@@ -8,6 +8,7 @@ public:
 	Harl();
 	~Harl();
 	static void	complain(std::string level);
+	static void	replies(std::string level);
 private:
 	static const std::string debugMessages[];
 	void	debug(void);

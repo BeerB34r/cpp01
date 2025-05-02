@@ -57,6 +57,43 @@ void	Harl::complain(std::string level) {
 	(harl.*func)();
 }
 
+void	Harl::replies(std::string level) {
+	switch (hash(level)) {
+		case "DEBUG"_hash: {
+			std::cout << "[ DEBUG ]" << std::endl;
+			for (int i = 0; i < 2; i++) {
+				std::cout << debugMessages[i] << std::endl;
+			}
+			std::cout << std::endl;
+		}
+		case "INFO"_hash: {
+			std::cout << "[ INFO ]" << std::endl;
+			for (int i = 0; i < 2; i++) {
+				std::cout << infoMessages[i] << std::endl;
+			}
+			std::cout << std::endl;
+		}
+		case "WARNING"_hash: {
+			std::cout << "[ WARNING ]" << std::endl;
+			for (int i = 0; i < 2; i++) {
+				std::cout << warningMessages[i] << std::endl;
+			}
+			std::cout << std::endl;
+		}
+		case "ERROR"_hash: {
+			std::cout << "[ ERROR ]" << std::endl;
+			for (int i = 0; i < 2; i++) {
+				std::cout << errorMessages[i] << std::endl;
+			}
+			std::cout << std::endl;
+			break ;
+		}
+		default: {
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		}
+	}
+}
+
 const std::string Harl::debugMessages[2] = {
 	"I'll take a Double Triple Bossy Deluxe, on a raft, four-by-four animal-style, extra shingles with a shimmy and a squeeze, light axle grease, make it cry, burn it, and let it swim",
 	"I’ll have two number 9s, a number 9 large, a number 6 with extra dip, a number 7, two number 45s, one with cheese, and a large soda.",
